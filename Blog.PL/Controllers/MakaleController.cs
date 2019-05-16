@@ -45,8 +45,8 @@ namespace Blog.PL.Controllers
                 yeni.Content = model.Content;
                 yeni.Picture = filename;
                 yeni.CategoryId = model.CategoryId;
-                //yeni.UserId = HttpContext.User.Identity.GetUserId();
-                yeni.UserId = "55b5fccd-fbd5-4f3a-9fc0-b4b0714cc96d";
+                yeni.UserId = HttpContext.User.Identity.GetUserId();
+                //yeni.UserId = "55b5fccd-fbd5-4f3a-9fc0-b4b0714cc96d";
                 if (repoM.Add(yeni))
                     return RedirectToAction("Index");
                 return View(model);
@@ -67,8 +67,8 @@ namespace Blog.PL.Controllers
             Comment yeniYorum = new Comment();
             yeniYorum.ArticleId = model.Makale.Id;
             yeniYorum.Content = model.Yorum.Content;
-            //yeniYorum.UserId = HttpContext.User.Identity.GetUserId();
-            yeniYorum.UserId = "55b5fccd-fbd5-4f3a-9fc0-b4b0714cc96d";
+            yeniYorum.UserId = HttpContext.User.Identity.GetUserId();
+            //yeniYorum.UserId = "55b5fccd-fbd5-4f3a-9fc0-b4b0714cc96d";
             if (repoC.Add(yeniYorum))
             {
                 return RedirectToAction("Index");
